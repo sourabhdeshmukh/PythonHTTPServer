@@ -39,6 +39,7 @@ class WebServer:
                     conn, addr = sock.accept()
                     thread = threading.Thread(target=self.keepConnectionAlive, args=(conn, addr))
                     thread.start()
+                    print(threading.enumerate())
             except KeyboardInterrupt:
                 conn.close()
     
